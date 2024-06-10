@@ -13,8 +13,26 @@
 <body>
     <div class="container mt-4">
         <h1 class="mb-4">Chi Tiết Chương Trình Giảng Dạy</h1>
+        
+        <!-- Form thêm chương trình giảng dạy -->
+        <form action="CurriculumControllerURL" method="post" class="mb-4">
+            <input type="hidden" name="service" value="addCurriculum">
+            <div class="form-group">
+                <label for="CurID">Mã Chương Trình:</label>
+                <input type="text" class="form-control" id="CurID" name="CurID" required>
+            </div>
+            <div class="form-group">
+                <label for="CurName">Tên Chương Trình:</label>
+                <input type="text" class="form-control" id="CurName" name="CurName" required>
+            </div>
+            <div class="form-group">
+                <label for="CateID">Mã Danh Mục:</label>
+                <input type="text" class="form-control" id="CateID" name="CateID" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm Chương Trình</button>
+        </form>
 
-        <%
+        <% 
             DAOCurriculum dao = null;
             Vector<Curriculum> curriculums = null;
             try {
@@ -22,16 +40,8 @@
                 curriculums = dao.getAllCurriculums("SELECT * FROM Curriculum");
             } catch (Exception e) {
                 e.printStackTrace();
-        %>
-            <div class="alert alert-danger" role="alert">
-                Có lỗi xảy ra khi kết nối cơ sở dữ liệu hoặc truy vấn dữ liệu.
-                <pre><%= e.getMessage() %></pre>
-            </div>
-        <%
             }
-        %>
 
-        <%
             if (curriculums != null) {
         %>
             <table class="table table-bordered table-hover">
@@ -41,6 +51,7 @@
                         <th>Tên Chương Trình</th>
                         <th>Mã Danh Mục</th>
                         <th>Chi tiết</th>
+                        <th>Chỉnh sửa</th>
                         <th>Xóa</th>
                     </tr>
                 </thead>
@@ -52,17 +63,16 @@
                             <td><%= curriculum.getCurID() %></td>
                             <td><%= curriculum.getCurName() %></td>
                             <td><%= curriculum.getCateID() %></td>
-                            <td><a href="CurDateAct.jsp?CurID=<%= curriculum.getCurID() %>" class="btn btn-primary">Chi tiết</a></td>
-                            <td><button class="btn btn-danger">Xóa</button></td>
+                            <td><a href="CurriculumDate.jsp?CurID=<%= curriculum.getCurID() %>" class="btn btn-primary">Chi tiết</a></td>
+                            <td><a href="UpdateCurriculum.jsp?CurID=<%= curriculum.getCurID() %>" class="btn btn-success">Chỉnh sửa</a></td>
+                            <td><a href="CurriculumControllerURL?service=delete&CurID=<%= curriculum.getCurID() %>" class="btn btn-danger">Xóa</a></td>
                         </tr>
                     <%
                         }
                     %>
                 </tbody>
             </table>
-        <%
-            }
-        %>
+        <% } %>
     </div>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->

@@ -4,11 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/nntru/Hogwarts/web/Curriculum.jsp</file>
+            <file>file:/C:/Users/nntru/Hogwarts/src/java/controller/CurriculumController.java</file>
+            <file>file:/C:/Users/nntru/Hogwarts/web/CurriculumDate.jsp</file>
             <file>file:/C:/Users/nntru/Hogwarts/src/java/model/DAOCurriculum.java</file>
-            <file>file:/C:/Users/nntru/Hogwarts/src/java/model/DAOCurDateAct.java</file>
-            <file>file:/C:/Users/nntru/Hogwarts/src/java/entity/CurDateAct.java</file>
-            <file>file:/C:/Users/nntru/Hogwarts/src/java/model/DBConnect.java</file>
-            <file>file:/C:/Users/nntru/Hogwarts/web/CurDateAct.jsp</file>
+            <file>file:/C:/Users/nntru/Hogwarts/src/java/entity/CurriculumDate.java</file>
+            <file>file:/C:/Users/nntru/Hogwarts/web/UpdateCurriculum.jsp</file>
         </group>
     </open-files>
 </project-private>
