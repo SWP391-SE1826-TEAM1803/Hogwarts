@@ -65,30 +65,48 @@ public class DAOUser extends DBConnect {
     }
 
     public Vector<User> getAllUsers(String sql) {
-    Vector<User> vector = new Vector<>();
-    try {
-        Statement state = (Statement) conn.createStatement(
-                ResultSet.TYPE_SCROLL_SENSITIVE,
-                ResultSet.CONCUR_UPDATABLE);
-        ResultSet rs = state.executeQuery(sql);
-        while (rs.next()) {
-            String userID = rs.getString(1);
-            String fullName = rs.getString(2);
-            String gender = rs.getString(3);
-            String address = rs.getString(4);
-            String phone = rs.getString(5);
-            String email = rs.getString(6);
-            String role = rs.getString(7);
-            String password = rs.getString(8);
-            User user = new User(userID, fullName, gender, address, phone, email, role, password);
-            vector.add(user);
+        Vector<User> vector = new Vector<>();
+        try {
+            Statement state = (Statement) conn.createStatement(
+                    ResultSet.TYPE_SCROLL_SENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
+            ResultSet rs = state.executeQuery(sql);
+            while (rs.next()) {
+                String userID = rs.getString(1);
+                String fullName = rs.getString(2);
+                String gender = rs.getString(3);
+                String address = rs.getString(4);
+                String phone = rs.getString(5);
+                String email = rs.getString(6);
+                String role = rs.getString(7);
+                String password = rs.getString(8);
+                User user = new User(userID, fullName, gender, address, phone, email, role, password);
+                vector.add(user);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } catch (SQLException ex) {
-        Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
+        return vector;
     }
-    return vector;
-}
 
+    public boolean login(String role, String userName, String password) {
+        String sql = "select * from [User] where UserID=? and Password=? and Role=?";
+        try {
+            PreparedStatement pre = conn.prepareStatement(sql);
+            pre.setString(1, userName);
+            pre.setString(2, password);
+            pre.setString(3, role);
+
+            ResultSet rs = pre.executeQuery();
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+
+    }
 
     public User getUserByID(String userID) {
         User user = null;
@@ -111,5 +129,14 @@ public class DAOUser extends DBConnect {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         return user;
+    }
+
+    public static void main(String[] args) {
+        DAOUser dao = new DAOUser();
+        boolean check = dao.login("Parent", "PA001", "123");
+        if (check = true) {
+            System.out.print("ok");
+        }
+
     }
 }

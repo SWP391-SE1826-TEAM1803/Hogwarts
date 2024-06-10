@@ -35,7 +35,7 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
-        
+
         <style>
             body {
                 background: url('assets/img/background.jpg') no-repeat center center fixed;
@@ -69,22 +69,32 @@
 
                                         <div class="pt-4 pb-2">
                                             <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                            <p class="text-center small">Enter your username & password to login</p>
+                                            <p class="text-center small">Enter your username, password, and role to login</p>
                                         </div>
 
-                                        <form class="row g-3 needs-validation" novalidate>
+                                        <form class="row g-3 needs-validation" action="LoginControllerURL" method="GET">
 
                                             <div class="col-12">
-                                                <label for="yourUsername" class="form-label">Username</label>
-
+                                                <label  class="form-label">Username</label>
                                                 <input type="text" name="username" class="form-control" id="yourUsername" required>
                                                 <div class="invalid-feedback">Please enter your username.</div>
                                             </div>
 
                                             <div class="col-12">
-                                                <label for="yourPassword" class="form-label">Password</label>
+                                                <label  class="form-label">Password</label>
                                                 <input type="password" name="password" class="form-control" id="yourPassword" required>
                                                 <div class="invalid-feedback">Please enter your password!</div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label for="yourRole" class="form-label">Role</label>
+                                                <select class="form-control" name="role" id="yourRole" required>
+                                                    <option value="" disabled selected>Select your role</option>
+                                                    <option value="admin">Admin</option>
+                                                    <option value="Parent">Parents</option>
+                                                    <option value="Teacher">Teacher</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please select your role!</div>
                                             </div>
 
                                             <div class="col-12 d-flex justify-content-between align-items-center">
@@ -94,23 +104,16 @@
                                                 </div>
                                                 <p class="small mb-0"><a href="ForgotPassword.jsp">Forgot password?</a></p>
                                             </div>
-                                            <div class="col-12" >
-                                                <button class="btn btn-primary w-100" type="submit">Login</button>
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100" type="submit" name="service" value="Login">Login</button>
                                             </div>
-
                                         </form>
-
                                     </div>
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
-
                 </section>
-
             </div>
         </main><!-- End #main -->
 
