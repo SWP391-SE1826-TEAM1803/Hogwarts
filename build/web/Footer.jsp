@@ -46,7 +46,7 @@
       &copy; Copyright <strong><span>Hogwarts</span></strong>. All Rights Reserved
     </div>
     <div class="credits">      
-      Designed by <a>DucThang</a>
+      Designed by <a>TEAM1803-SE1826NJ</a>
     </div>
   </footer><!-- End Footer -->
 

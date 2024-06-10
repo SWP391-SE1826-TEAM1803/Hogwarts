@@ -90,7 +90,7 @@
                                                 <label for="yourRole" class="form-label">Role</label>
                                                 <select class="form-control" name="role" id="yourRole" required>
                                                     <option value="" disabled selected>Select your role</option>
-                                                    <option value="admin">Admin</option>
+                                                    <option value="Admin">Admin</option>
                                                     <option value="Parent">Parents</option>
                                                     <option value="Teacher">Teacher</option>
                                                 </select>

@@ -223,7 +223,7 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6><%=username%></h6>
-              <span>User</span>
+              <span>Admin</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -262,7 +262,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="LoginControllerURL?service=Logout">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span >Sign Out</span>
               </a>
             </li>
 
@@ -280,11 +280,18 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="HomeAdmin.jsp">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="UserControllerURL?service=listAll">
+          <i class="bi bi-person"></i>
+          <span>Accounts</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - Hogwarts Bootstrap Template</title>
+  <title>Admin - Hogwarts</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,22 +36,25 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  
 </head>
 
 <body>
+    <%@include file="HeaderAdmin.jsp"%>
+    <main id="main" class="main">
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Hogwarts</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">      
-      Designed by <a>TEAM1803-SE1826NJ</a>
-    </div>
-  </footer><!-- End Footer -->
-
+    <div class="pagetitle">
+      <h1>Trang chủ</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    </main>
+    
+    <%@include file="Footer.jsp"%>
   
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
