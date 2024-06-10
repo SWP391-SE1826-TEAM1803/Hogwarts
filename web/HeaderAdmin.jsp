@@ -223,7 +223,7 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6><%=username%></h6>
-              <span>User</span>
+              <span>Admin</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -262,7 +262,7 @@
             <li>
               <a class="dropdown-item d-flex align-items-center" href="LoginControllerURL?service=Logout">
                 <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
+                <span >Sign Out</span>
               </a>
             </li>
 
