@@ -280,11 +280,18 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="HomeAdmin.jsp">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Home</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="UserControllerURL?service=listAll">
+          <i class="bi bi-person"></i>
+          <span>Accounts</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

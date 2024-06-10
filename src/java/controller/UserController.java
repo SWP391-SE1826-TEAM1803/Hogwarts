@@ -45,12 +45,22 @@ public class UserController extends HttpServlet {
         }
 
         if (service.equals("listAll")) {
-            // Get all users
-            Vector<User> vector = dao.getAllUsers("SELECT * FROM [User]");
+            // Get role parameter
+            String role = request.getParameter("role");
+            Vector<User> vector;
+            
+            if (role == null || role.isEmpty()) {
+                // Get all users
+                vector = dao.getAllUsers("SELECT * FROM [User]");
+            } else {
+                // Get users by role
+                vector = dao.getAllUsers("SELECT * FROM [User] WHERE role = '" + role + "'");
+            }
+
             // Set data to request
             request.setAttribute("data", vector);
             // Forward to JSP
-            RequestDispatcher dispatcher = request.getRequestDispatcher("UserList.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("UserManager.jsp");
             dispatcher.forward(request, response);
         }
 
